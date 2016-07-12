@@ -1,0 +1,89 @@
+/*
+ * Core: General Layout Style
+ * -------------------------
+ */
+html, body
+  min-height 100%
+body
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  font-family 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-weight 400
+  overflow-x hidden
+  overflow-y auto
+
+/* Layout */
+.wrapper
+  clearfix()
+  min-height 100%
+  position static
+  overflow hidden
+
+/*
+ * Content Wrapper - contains the main content
+ */
+.content-wrapper, .main-footer
+  transition-transform($transition-speed $transition-fn,
+                      margin $transition-speed $transition-fn)
+  margin-left $sidebar-width
+  z-index 820
+  //Top nav layout
+  .layout-top-nav &
+    margin-left 0
+  @media (max-width: $screen-xs-max)
+    margin-left 0
+  //When opening the sidebar on large screens
+  .sidebar-collapse &
+    @media (min-width: $screen-sm)
+      margin-left: 0;
+  //When opening the sidebar on small screens
+  .sidebar-open &
+    @media (max-width: $screen-xs-max)
+      translate($sidebar-width, 0)
+.content-wrapper
+  min-height 100%
+  background-color $body-bg
+  z-index 800
+.main-footer
+  background #fff
+  padding 15px
+  color #444
+  border-top 1px solid $gray
+
+/* Fix for IE */
+body.hold-transition
+  .content-wrapper
+  .main-footer
+  .main-sidebar
+  .main-header > .navbar
+  .main-header .logo
+    transition none
+
+/* Content */
+.content
+  min-height 250px
+  padding 15px
+  container-fixed($grid-gutter-width)
+
+/* H1 - H6 font */
+h1, h2, h3, h4, h5, h6,
+.h1,.h2,.h3,.h4,.h5,.h6
+  font-family 'Source Sans Pro', sans-serif
+/* General Links */
+a
+  color $link-color
+  &:hover
+  &:active
+  &:focus
+    outline none
+    text-decoration none
+    color $link-hover-color
+
+/* Page Header */
+.page-header
+  margin 10px 0 20px 0
+  font-size 22px
+  > small
+    color #666
+    display block
+    margin-top 5px

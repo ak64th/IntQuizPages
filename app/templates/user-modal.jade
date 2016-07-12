@@ -1,0 +1,22 @@
+mixin input(type,id,placeholder,label,name)
+  .form-group
+    label.col-xs-2.control-label(for="#{id}") #{label}
+    .col-xs-10
+      input.form-control(type="#{type}",id="#{id}",placeholder="#{placeholder}",name="#{name}")
+
+.modal.fade(id="#{id}", tabindex="-1", role="dialog", aria-labelledby="userFormLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only 关闭
+        h4.modal-title#userFormLabel 输入用户信息
+      .modal-body
+        row
+          form.form-horizontal
+            +input('text', 'username', '用户名', '用户名', 'username')
+            +input('password', 'password', '密码', '密码', 'password')
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") 取消
+        button.btn.btn-primary(type="submit") 保存

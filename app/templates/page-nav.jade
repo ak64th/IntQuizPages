@@ -1,0 +1,20 @@
+-
+  start = Math.max(1, page - 5)
+  end = Math.min(pages, page + 5)
+ul.pagination
+  li(class=(page == 1) ? 'disabled' : '')
+    a(href='#', aria-label='Start', data-id=1)
+      span(aria-hidden=true) &laquo;
+  - var i = start
+  while i < page
+    li
+      a(href='#' data-id=i)= i++
+  li.active(data-id=page)
+    a(href='#')= page
+  - var i = page + 1
+  while i <= end
+    li
+      a(href='#' data-id=i)= i++  
+  li(class=(page == pages) ? 'disabled' : '')
+    a(href='#' aria-label='End' data-id=pages)
+      span(aria-hidden=true) &raquo;

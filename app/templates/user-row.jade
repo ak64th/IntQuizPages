@@ -1,0 +1,9 @@
+td= id
+td= username
+td
+  if !admin
+    a.btn.btn-default.btn-xs(type='button' data-id=id data-toggle='modal' data-target='#userModalForm') 修改密码
+      if active
+        a.btn.btn-danger.btn-xs#deactivate(type='button') 冻结帐号
+      else
+        a.btn.btn-success.btn-xs#activate(type='button') 激活帐号

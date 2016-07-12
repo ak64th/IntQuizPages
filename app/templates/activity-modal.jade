@@ -1,0 +1,153 @@
+mixin input(type,id,placeholder,label,name)
+  .form-group
+    label.col-xs-2.control-label(for="#{id}") #{label}
+    .col-xs-10
+      input.form-control(type="#{type}",id="#{id}",placeholder="#{placeholder}",name="#{name}")
+
+.modal.fade(id="#{id}", tabindex="-1", role="dialog", aria-labelledby="activityFormLabel", aria-hidden="true")
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only 关闭
+        h4.modal-title#activityFormLabel 输入活动信息
+      .modal-body
+        form.form-horizontal
+          .form-group
+            +input('text', 'name', '活动名称', '活动名称', 'name')
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") 取消
+        button.btn.btn-primary(type="submit") 保存
+//-       <div class="modal-body">
+//-         <form class="form-horizontal" method="post" enctype="multipart/form-data">
+//-           <div class="form-group">
+//-             <label for="name" class="col-sm-2 control-label">活动名称</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="text" class="form-control" id="name" name="name" placeholder="活动名称">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="welcome" class="col-sm-2 control-label">活动介绍</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <textarea class="form-control textarea" rows="3" id="welcome" name="welcome" placeholder="活动介绍"></textarea>
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="welcome_img" class="col-sm-2 control-label">活动图片</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <span class="btn btn-info btn-file">选择图片
+//-                 <label for="welcome_img" class="sr-only">选择图片</label>
+//-                 <input type="file" id="welcome_img" name="welcome_img">
+//-               </span>
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-           <label for="type" class="col-sm-2 control-label">活动模式</label>
+//-             <div class="col-sm-10">
+//-               <select class="form-control" id="type" name="type"></select>
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="book" class="col-sm-2 control-label">题库选择</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <select class="form-control" id="book" name="book">
+//-               </select>
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="chances" class="col-sm-2 control-label">答题机会（次）</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="chances" name="chances" placeholder="答题机会（次）">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="time_limit" class="col-sm-2 control-label">答题时间（秒）</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="time_limit" name="time_limit" placeholder="答题时间（秒）">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="single" class="col-sm-2 control-label">单选题数量</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="single" name="single" placeholder="单选题数量">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="multi" class="col-sm-2 control-label">多选题数量</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="multi" name="multi" placeholder="多选题数量">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="single_points" class="col-sm-2 control-label">单选题分值</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="single_points" name="single_points" placeholder="单选题分值">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="multi_points" class="col-sm-2 control-label">多选题分值</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="number" min="0" class="form-control" id="multi_points" name="multi_points" placeholder="多选题分值">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="datetimerange" class="col-sm-2 control-label">活动时间</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="text" class="form-control" id="datetimerange" name="datetimerange" placeholder="请从下拉框内选择">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <h4 class="col-sm-2 control-label">用户信息</h4>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="info_field_1" class="col-sm-2 control-label">字段1</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="text" class="form-control" id="info_field_1" name="info_field_1" placeholder="字段1">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="info_field_2" class="col-sm-2 control-label">字段2</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="text" class="form-control" id="info_field_2" name="info_field_2" placeholder="字段2">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <label for="info_field_3" class="col-sm-2 control-label">字段3</label>
+//- 
+//-             <div class="col-sm-10">
+//-               <input type="text" class="form-control" id="info_field_3" name="info_field_3" placeholder="字段3">
+//-             </div>
+//-           </div>
+//-           <div class="form-group">
+//-             <div class="col-sm-offset-2 col-sm-10">
+//-               <div class="checkbox">
+//-                 <label>
+//-                   <input type="checkbox" name="show_answer">
+//-                   答题后显示正确答案
+//-                 </label>
+//-               </div>
+//-             </div>
+//-           </div>
+//-         </form>
+//-       </div>
+//-       <div class="modal-footer">
+//-         <button type="button" data-dismiss="modal" class="btn btn-default">取消</button>
+//-         <button id="save" type="submit" class="btn btn-primary">保存</button>
+//-       </div>
+//-     </div>
+//-   </div>
+//- </div>

@@ -1,0 +1,16 @@
+.modal.fade(id="#{id}", tabindex="-1", role="dialog", aria-labelledby="bookFormLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only 关闭
+        h4.modal-title#bookFormLabel 输入题库信息
+      .modal-body
+        form
+          .form-group
+            label.control-label(for="title") 题库名
+            input.form-control(type="text", id="title", placeholder="题库名", name="title")
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") 取消
+        button.btn.btn-primary#save(type="submit") 保存

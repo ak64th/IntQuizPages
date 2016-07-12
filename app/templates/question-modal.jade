@@ -1,0 +1,35 @@
+mixin textarea(id,label,name)
+  .form-group
+    label.col-sm-2.control-label(for="#{id}") #{label}
+    .col-sm-10
+      textarea.form-control(id="#{id}", name="#{name}", row='4')
+
+.modal.fade(id="#{id}", tabindex="-1", role="dialog", aria-labelledby="questionFormLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only 关闭
+        h4.modal-title#questionFormLabel 输入问题详细信息
+      .modal-body
+        form.form-horizontal
+          +textarea('content', '问题内容', 'content')
+          .form-group
+            label.col-sm-2.control-label(for='type') 问题内容
+            .col-sm-10
+              select.form-control.textarea#type(row='4', name='type')
+          - var options = ['A', 'B', 'C', 'D', 'E', 'F']
+          each option in options
+            +textarea('option_' + option, "选项" + option, 'option_' + option)
+          .form-group
+            label.col-sm-2.control-label 正确答案
+            .col-sm-10
+              each option, i in options
+                .checkbox.col-xs-6.col-sm-4
+                  label
+                    input(type="checkbox", name="correct_option", value=i+1)
+                    | 选项#{option}
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") 取消
+        button.btn.btn-primary(type="submit") 保存

@@ -1,0 +1,38 @@
+{
+  "name": "intfocus_quiz_pages",
+  "version": "1.0.0",
+  "description": "Admin panel for quiz library",
+  "main": "public/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap-styl": "^5.0.5",
+    "coffeeify": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "jadeify": "^4.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elmer Yu",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ak64th/QuizLibPages"
+  },
+  "bugs": {
+    "url": "https://github.com/ak64th/QuizLibPages/issues"
+  },
+  "homepage": "https://github.com/ak64th/QuizLibPages"
+}
